@@ -1,0 +1,8 @@
+#sidebar
+  .widget
+    h2 Archive
+    .widget-content
+      ul
+        each val in ['Home', 'About', 'Contact', 'Privacy Policy', 'Sitemap']
+          li
+            a.link(href='/')= val

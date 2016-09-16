@@ -1,0 +1,50 @@
+// Base
++selection
+  background: $selection-background
+  color: $selection-color
+  text-shadow: none
+
+body
+  color: $base-font-color
+  font-family: $base-font-family
+  font-size: rem($base-font-size)
+  line-height: $base-line-height
+  background-color: $body-bg
+  -webkit-font-smoothing: antialiased
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004)
+  
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  font-family: $heading-font-family
+  font-size: modular-scale(1)
+  line-height: $heading-line-height
+  margin: 0 0 $small-spacing
+p
+  margin: 0 0 $small-spacing
+  a
+    color: #ed5a28
+    border-bottom: 1px solid #ed5a28
+    &:hover
+      color: shade(#ed5a28,20%)
+      border-color: shade(#ed5a28,20%)
+a
+  color: $link-color
+  text-decoration: none
+  transition: color $base-duration $base-timing
+  &:active,
+  &:focus,
+  &:hover
+    //color: shade($link-color, 25%)
+    color: $link--hover-color
+  
+// List Style
+ul,
+ol
+  list-style-type: none
+  margin: 0
+  padding: 0

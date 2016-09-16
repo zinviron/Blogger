@@ -1,0 +1,22 @@
+#content
+  article.hentry(itemscope, itemtype='https://schema.org/BlogPosting')
+    h1.entry-title Post Title
+    .meta
+      span.author.vcard By 
+        a.fn Paul
+      span.comment 0 comments
+    .entry-content
+      p sdfsdghsdghdh sdfsdf
+  .share
+    h3.share_title Share this:
+    .share_content
+      ul
+        each val, index in {'facebook':'Facebook','twitter':'Twitter','google':'Google+','pinterest':'Pinterest','tumblr':'Tumblr'}
+          li(class='' + index)
+            a.link(href='/', rel='nofollow', target='_blank', title='Share on ' + val)= val
+  // nextprev
+  .pagenav
+    .next
+      a(href='/') &laquo; Next Posts
+    .prev
+      a(href='/') Previous Posts &raquo;

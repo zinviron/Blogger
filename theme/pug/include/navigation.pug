@@ -1,0 +1,12 @@
+header.topbar(role='banner')
+  .topbar-wrap
+    .topbar-logo
+      a.brand(href='/') Guardian Codex
+    .topbar-nav
+      label.show_menu(for='show_menu') Show Menu
+      input#show_menu(role='button', type='checkbox')
+      nav#menu(role='navigation')
+        ul(itemscope, itemtype='http://www.schema.org/SiteNavigationElement')
+          each val in ['Home', 'About', 'Contact']
+            li.item(itemprop="name")
+              a.link(href='/', itemprop='url')= val
