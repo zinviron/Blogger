@@ -2,18 +2,22 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     pug = require('gulp-pug'),
-    minifycss   = require('gulp-clean-css'),
-    browserSync = require('browser-sync');
+    prefix = require('gulp-autoprefixer'),
+    minifycss = require('gulp-clean-css'),
+    browserSync = require('browser-sync'),
+    bourbon = require('bourbon').includePaths,
+    neat = require('bourbon-neat').includePaths;
 
 // Recompile SASS
 gulp.task('sass', function () {
     return gulp.src('theme/sass/main.sass')
         .pipe(sass({
-            onError: browserSync.notify
+          includePaths: [bourbon, neat],  
+          onError: browserSync.notify
         }).on('error', sass.logError))
-        //.pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(prefix('last 2 versions'))
         .pipe(rename({suffix: '.min', prefix : ''}))
-		.pipe(minifycss())
+		    .pipe(minifycss())
         .pipe(gulp.dest('css'))
         .pipe(browserSync.reload({stream:true}));
 });
